@@ -1,177 +1,405 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FrozenCoinz — Hypixel Coins Marketplace</title>
-  <meta name="description" content="FrozenCoinz — a trusted Minecraft marketplace for Hypixel Coins. Fast delivery, secure checkout, and 24/7 support." />
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <nav class="nav">
-    <div class="wrapper nav-inner">
-      <a class="brand" href="#">
-        <span class="logo" aria-hidden="true"></span>
-        <h1>FrozenCoinz</h1>
-      </a>
-      <div class="nav-actions">
-        <span class="badge"><span class="dot"></span> Online • Fast Delivery</span>
-        <a class="btn" href="#faq" aria-label="Read FAQ">FAQ</a>
-        <a class="btn primary" href="#shop" aria-label="Go to shop">Shop Coins</a>
-      </div>
-    </div>
-  </nav>
+:root{
+  --bg: #0b0f14;
+  --bg-alt:#0e141b;
+  --panel:#0f1621cc;
+  --text:#dbe8ff;
+  --muted:#8aa0bf;
+  --accent:#4cc9f0;
+  --accent-2:#4361ee;
+  --success:#7ef29a;
+  --warning:#ffd166;
+  --danger:#ff6b6b;
+  --card:#0c121aaa;
+  --border:#1f2a3a;
+  --shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.02);
+  --radius: 18px;
+}
 
-  <header class="hero">
-    <div class="wrapper grid">
-      <div>
-        <div class="kicker">Minecraft • Hypixel Coins</div>
-        <h2 class="title">Buy Hypixel Coins fast & safe — powered by <span style="background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip:text; background-clip:text; color:transparent;">FrozenCoinz</span>.</h2>
-        <p class="subtitle">Trusted by gamers worldwide for instant delivery, fair prices, and friendly 24/7 support. Our encrypted checkout and verified suppliers keep your items safe — every time.</p>
-        <div class="cta">
-          <a class="btn primary" href="#shop">Browse Packages</a>
-          <a class="btn" href="#how">How It Works</a>
-        </div>
-        <div class="trust">
-          <span class="pill">🔒 256‑bit SSL</span>
-          <span class="pill">⚡ Average delivery 5–15 min</span>
-          <span class="pill">🛡️ Buyer Protection</span>
-          <span class="pill">💬 Live Chat Support</span>
-        </div>
-      </div>
-      <div class="hero-card">
-        <div class="stat"><span>Completed Orders</span><strong>128,742</strong></div>
-        <div class="stat"><span>Avg. Rating</span><strong>4.9/5</strong></div>
-        <div class="stat"><span>Refund Policy</span><strong>100% Guaranteed</strong></div>
-        <p class="legal">*Stats are sample placeholders. Replace with real data when ready.</p>
-      </div>
-    </div>
-  </header>
+* { 
+  box-sizing: border-box; 
+}
 
-  <main>
-    <section class="section wrapper" id="shop">
-      <h2>Popular Coin Packages</h2>
-      <div class="cards">
-        <!-- Package 1 -->
-        <article class="card" aria-label="50M Hypixel Coins">
-          <div class="top">
-            <span class="tag">Starter</span>
-            <span class="tag">Instant</span>
-          </div>
-          <h3 class="price">50M Coins</h3>
-          <p class="desc">Perfect to kickstart your profile. Safe, verified transfer.</p>
-          <a class="pill-btn" href="#checkout">Buy Now — $14.99 →</a>
-        </article>
-        <!-- Package 2 -->
-        <article class="card" aria-label="100M Hypixel Coins">
-          <div class="top">
-            <span class="tag">Best Value</span>
-            <span class="tag">Instant</span>
-          </div>
-          <h3 class="price">100M Coins</h3>
-          <p class="desc">Most popular bundle. Fast delivery, priority support.</p>
-          <a class="pill-btn" href="#checkout">Buy Now — $24.99 →</a>
-        </article>
-        <!-- Package 3 -->
-        <article class="card" aria-label="250M Hypixel Coins">
-          <div class="top">
-            <span class="tag">Pro</span>
-            <span class="tag">Secure</span>
-          </div>
-          <h3 class="price">250M Coins</h3>
-          <p class="desc">For serious upgrades and end‑game progress.</p>
-          <a class="pill-btn" href="#checkout">Buy Now — $59.99 →</a>
-        </article>
-        <!-- Package 4 -->
-        <article class="card" aria-label="1B Hypixel Coins">
-          <div class="top">
-            <span class="tag">Whale</span>
-            <span class="tag">Escrow</span>
-          </div>
-          <h3 class="price">1B Coins</h3>
-          <p class="desc">High‑tier package with optional escrow for peace of mind.</p>
-          <a class="pill-btn" href="#checkout">Buy Now — $199.99 →</a>
-        </article>
-      </div>
-    </section>
+html, body { 
+  height: 100%; 
+}
 
-    <section class="section wrapper" id="how">
-      <h2>How It Works</h2>
-      <div class="steps">
-        <div class="step">
-          <div class="num">1</div>
-          <h3>Choose a package</h3>
-          <p class="desc">Pick the coins you need and add your Minecraft IGN during checkout.</p>
-        </div>
-        <div class="step">
-          <div class="num">2</div>
-          <h3>Secure payment</h3>
-          <p class="desc">We use encrypted checkout and anti‑fraud systems to keep you safe.</p>
-        </div>
-        <div class="step">
-          <div class="num">3</div>
-          <h3>Fast delivery</h3>
-          <p class="desc">A seller will meet you in‑game to transfer coins within minutes.</p>
-        </div>
-      </div>
-    </section>
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  color:var(--text);
+  background: radial-gradient(1200px 800px at 75% -10%, #142034 0%, transparent 55%),
+              radial-gradient(800px 600px at -10% 20%, #101a2b 0%, transparent 60%),
+              linear-gradient(180deg, #0a0f15 0%, #070a0f 100%);
+  letter-spacing: .2px;
+}
 
-    <section class="section wrapper" id="faq">
-      <h2>FAQ</h2>
-      <div class="faq">
-        <div class="qa">
-          <h4>Is FrozenCoinz trusted?</h4>
-          <p>Yes. We vet suppliers, escrow large orders, and offer buyer protection with dispute resolution and refunds where applicable.</p>
-        </div>
-        <div class="qa">
-          <h4>Delivery time?</h4>
-          <p>Most orders complete in 5–15 minutes after payment verification. High‑tier orders may take longer for security checks.</p>
-        </div>
-        <div class="qa">
-          <h4>Do you need my password?</h4>
-          <p>Never. We only require your in‑game name (IGN) to arrange the transfer.</p>
-        </div>
-        <div class="qa">
-          <h4>Refunds & cancellations</h4>
-          <p>If we can't complete the order in the stated window, you can request a full refund. Contact support via live chat.</p>
-        </div>
-      </div>
-      <p class="legal" style="margin-top:12px;">Minecraft and Hypixel are trademarks of their respective owners. FrozenCoinz is an independent marketplace and is not affiliated with Mojang or Hypixel.</p>
-    </section>
-  </main>
+a{ 
+  color: inherit; 
+  text-decoration: none; 
+}
 
-  <footer>
-    <div class="wrapper footgrid">
-      <div>
-        <div class="brand">
-          <span class="logo" aria-hidden="true"></span>
-          <h3 style="margin:0">FrozenCoinz</h3>
-        </div>
-        <p class="legal">© <span id="y">2025</span> FrozenCoinz. All rights reserved.</p>
-        <p class="legal">Contact: support@frozencoinz.example</p>
-      </div>
-      <div>
-        <strong>Marketplace</strong>
-        <ul style="list-style:none; padding:0; margin:8px 0 0; line-height: 1.9;">
-          <li><a href="#shop">Coin Packages</a></li>
-          <li><a href="#how">How It Works</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-      </div>
-      <div>
-        <strong>Legal</strong>
-        <ul style="list-style:none; padding:0; margin:8px 0 0; line-height: 1.9;">
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Refund Policy</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+.wrapper{ 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 20px; 
+}
 
-  <!-- No JS required; this small inline script only updates the year without external dependencies. Feel free to remove. -->
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+/* Nav */
+.nav{
+  position: sticky; 
+  top:0; 
+  z-index: 50;
+  backdrop-filter: blur(8px);
+  background: linear-gradient(180deg, rgba(10,14,20,.9), rgba(10,14,20,.6));
+  border-bottom:1px solid var(--border);
+}
+
+.nav-inner{ 
+  display:flex; 
+  align-items:center; 
+  justify-content:space-between; 
+  padding: 14px 0; 
+}
+
+.brand{ 
+  display:flex; 
+  align-items:center; 
+  gap:12px; 
+}
+
+.logo{
+  width:38px; 
+  height:38px; 
+  border-radius:12px; 
+  position:relative;
+  background: radial-gradient(120% 120% at 20% 20%, #5de8ff 0%, #2b90ff 40%, #1b2d4a 70%, #0b1422 100%);
+  box-shadow: inset 0 0 18px rgba(255,255,255,.2), 0 6px 20px rgba(38,140,255,.35);
+  overflow:hidden;
+}
+
+.logo:before{ 
+  content:""; 
+  position:absolute; 
+  inset:0; 
+  background: conic-gradient(from 0deg, transparent 0 70%, rgba(255,255,255,.08) 70% 100%); 
+  mix-blend-mode: overlay; 
+}
+
+.brand h1{ 
+  font-size: 20px; 
+  margin:0; 
+  font-weight: 700; 
+  letter-spacing:.5px; 
+}
+
+.badge{ 
+  font-size: 12px; 
+  padding:6px 10px; 
+  border:1px solid var(--border); 
+  border-radius: 999px; 
+  color: var(--muted); 
+  display:inline-flex; 
+  align-items:center; 
+  gap:8px; 
+}
+
+.dot{ 
+  width:8px; 
+  height:8px; 
+  border-radius:50%; 
+  background: var(--success); 
+  box-shadow: 0 0 12px var(--success); 
+}
+
+.nav-actions{ 
+  display:flex; 
+  align-items:center; 
+  gap:10px; 
+}
+
+.btn{ 
+  padding:10px 14px; 
+  border:1px solid var(--border); 
+  border-radius: 12px; 
+  background: linear-gradient(180deg, #121a26, #0e1620); 
+  box-shadow: var(--shadow); 
+  display:inline-flex; 
+  gap:10px; 
+  align-items:center; 
+  font-weight:600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover{ 
+  border-color: #244b74; 
+  background: linear-gradient(180deg, #1a3858, #14263a); 
+  box-shadow: 0 10px 30px rgba(67,97,238,.25), inset 0 0 0 1px rgba(255,255,255,.04);
+  transform: translateY(-1px);
+}
+
+/* Hero */
+.hero{ 
+  position:relative; 
+  padding: 100px 0 80px; 
+  overflow:hidden; 
+}
+
+.grid{
+  display:grid; 
+  grid-template-columns: 1.3fr 1fr; 
+  gap: 32px; 
+  align-items:center;
+}
+
+.kicker{ 
+  color: var(--accent); 
+  font-weight:700; 
+  letter-spacing:.8px; 
+  text-transform: uppercase; 
+  font-size: 12px; 
+}
+
+.title{ 
+  font-size: clamp(32px, 5vw, 54px); 
+  line-height: 1.05; 
+  margin: 10px 0 12px; 
+  font-weight: 800; 
+}
+
+.subtitle{ 
+  color: var(--muted); 
+  font-size: 18px; 
+  max-width: 680px; 
+}
+
+.cta{ 
+  margin-top: 32px; 
+  display:flex; 
+  gap:16px; 
+  flex-wrap: wrap; 
+}
+
+.hero-card{
+  border:1px solid var(--border); 
+  background: linear-gradient(180deg, rgba(21,30,43,.9), rgba(12,18,27,.9)); 
+  border-radius: var(--radius); 
+  padding: 20px; 
+  box-shadow: var(--shadow);
+}
+
+.stat{ 
+  display:flex; 
+  justify-content:space-between; 
+  padding:14px; 
+  border:1px solid var(--border); 
+  border-radius: 14px; 
+  margin-top: 10px; 
+  background: #0b121b; 
+}
+
+.stat strong{ 
+  font-size: 18px; 
+}
+
+/* Trust bar */
+.trust{
+  margin: 40px 0 16px; 
+  display:flex; 
+  gap:16px; 
+  flex-wrap:wrap; 
+  align-items:center;
+}
+
+.trust .pill{ 
+  border:1px solid var(--border); 
+  padding:8px 12px; 
+  border-radius: 999px; 
+  color: var(--muted); 
+  display:flex; 
+  gap:10px; 
+  align-items:center; 
+  background: #0a121c; 
+}
+
+/* Products */
+.section{ 
+  padding: 80px 0; 
+}
+
+.section h2{ 
+  font-size: 28px; 
+  margin:0 0 32px; 
+}
+
+.cards{ 
+  display:grid; 
+  grid-template-columns: repeat(4, 1fr); 
+  gap:24px; 
+}
+
+.card{
+  border:1px solid var(--border); 
+  background: linear-gradient(180deg, rgba(17,25,38,.85), rgba(13,19,28,.75)); 
+  border-radius: var(--radius); 
+  padding: 18px; 
+  box-shadow: var(--shadow); 
+  position:relative; 
+  overflow:hidden;
+}
+
+.card:before{ 
+  content:""; 
+  position:absolute; 
+  inset: -100% -60% auto; 
+  height: 120%; 
+  transform: rotate(12deg); 
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.06), transparent); 
+  animation: shine 6s linear infinite; 
+}
+
+@keyframes shine{ 
+  from{ left:-120%; } 
+  to{ left:120%; } 
+}
+
+.card .top{ 
+  display:flex; 
+  justify-content:space-between; 
+  align-items:center; 
+  margin-bottom: 10px; 
+}
+
+.tag{ 
+  font-size: 12px; 
+  padding:6px 10px; 
+  border:1px solid var(--border); 
+  border-radius: 999px; 
+  color: var(--muted); 
+}
+
+.price{ 
+  font-size: 26px; 
+  font-weight: 800; 
+  margin: 6px 0 2px; 
+}
+
+.desc{ 
+  color: var(--muted); 
+  font-size: 14px; 
+  min-height:38px; 
+}
+
+.pill-btn{ 
+  margin-top: 12px; 
+  display:inline-flex; 
+  align-items:center; 
+  gap:10px; 
+  padding:10px 14px; 
+  border-radius: 999px; 
+  border:1px solid #2b3f5b; 
+  background: linear-gradient(180deg, #16304b, #122439); 
+  font-weight:700; 
+}
+
+.pill-btn:hover{ 
+  filter: brightness(1.1); 
+}
+
+/* How it works */
+.steps{ 
+  display:grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap:24px; 
+}
+
+.step{ 
+  border:1px solid var(--border); 
+  border-radius: var(--radius); 
+  padding:18px; 
+  background: #0b121a; 
+  box-shadow: var(--shadow); 
+}
+
+.num{ 
+  width:30px; 
+  height:30px; 
+  border-radius:8px; 
+  display:grid; 
+  place-items:center; 
+  background: linear-gradient(180deg, #2a3f5f, #18283e); 
+  border:1px solid #27405c; 
+  font-weight:800; 
+}
+
+/* FAQ */
+.faq{ 
+  display:grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap:24px; 
+}
+
+.qa{ 
+  border:1px solid var(--border); 
+  border-radius: var(--radius); 
+  padding:18px; 
+  background: #0a121c; 
+  box-shadow: var(--shadow); 
+}
+
+.qa h4{ 
+  margin:0 0 8px; 
+  font-size: 16px; 
+}
+
+.qa p{ 
+  margin:0; 
+  color:var(--muted); 
+}
+
+/* Footer */
+footer{ 
+  padding: 60px 0 60px; 
+  border-top:1px solid var(--border); 
+  background: #070b11; 
+  color: #a8b8d6; 
+}
+
+.footgrid{ 
+  display:grid; 
+  grid-template-columns: 1.2fr .8fr .8fr; 
+  gap: 24px; 
+}
+
+.legal{ 
+  font-size: 12px; 
+  color:#7992b6; 
+  margin-top: 10px; 
+}
+
+/* Responsive */
+@media (max-width: 1000px){
+  .grid{ 
+    grid-template-columns: 1fr; 
+  }
+  .cards{ 
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  .steps{ 
+    grid-template-columns: 1fr; 
+  }
+  .faq{ 
+    grid-template-columns: 1fr; 
+  }
+  .footgrid{ 
+    grid-template-columns: 1fr 1fr; 
+  }
+}
+
+@media (max-width: 620px){
+  .cards{ 
+    grid-template-columns: 1fr; 
+  }
+  .footgrid{ 
+    grid-template-columns: 1fr; 
+  }
+}
