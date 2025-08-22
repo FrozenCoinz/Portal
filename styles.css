@@ -235,60 +235,38 @@ a{
   content:""; 
   position:absolute; 
   top: 0;
-  left: 0;
+  left: -100%;
   width: 100%;
   height: 100%;
-  background: #222 linear-gradient(90deg, 
-    rgba(17,25,38,0) 0%, 
-    rgba(17,25,38,0) 40%, 
-    rgba(255,255,255,0.4) 50%, 
-    rgba(17,25,38,0) 60%, 
-    rgba(17,25,38,0) 100%
-  ) -200px 0 no-repeat;
-  background-size: 200px 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255,255,255,0) 20%, 
+    rgba(255,255,255,0.1) 50%, 
+    rgba(255,255,255,0) 80%, 
+    transparent 100%
+  );
+  animation: shimmer 3s ease-in-out infinite;
   opacity: 0;
+  animation: shimmer 3s ease-in-out infinite 1s, shimmer-fade-in 1s ease-out forwards;
 }
 
-.card:nth-child(1):before {
-  animation: cardShine 8s ease-in-out infinite;
-  animation-delay: 0s;
+@keyframes shimmer{ 
+  0% { 
+    left: -100%; 
+    opacity: 0; 
+  }
+  50% { 
+    opacity: 1; 
+  }
+  100% { 
+    left: 100%; 
+    opacity: 0; 
+  }
 }
 
-.card:nth-child(2):before {
-  animation: cardShine 8s ease-in-out infinite;
-  animation-delay: 0.5s;
-}
-
-.card:nth-child(3):before {
-  animation: cardShine 8s ease-in-out infinite;
-  animation-delay: 1s;
-}
-
-.card:nth-child(4):before {
-  animation: cardShine 8s ease-in-out infinite;
-  animation-delay: 1.5s;
-}
-
-@keyframes cardShine {
-  0%, 10% {
-    background-position: -200px 0;
-    opacity: 0;
-  }
-  15% {
-    opacity: 1;
-  }
-  20% {
-    background-position: 0px 0;
-    opacity: 1;
-  }
-  25% {
-    background-position: calc(100% + 200px) 0;
-    opacity: 1;
-  }
-  30%, 100% {
-    background-position: calc(100% + 200px) 0;
-    opacity: 0;
-  }
+@keyframes shimmer-fade-in{
+  from{ opacity: 0; }
+  to{ opacity: 1; }
 }
 
 .card .top{ 
