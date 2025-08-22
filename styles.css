@@ -180,26 +180,19 @@ a{
   flex-wrap: wrap; 
 }
 
-.hero-card{
-  border:1px solid var(--border); 
-  background: linear-gradient(180deg, rgba(21,30,43,.9), rgba(12,18,27,.9)); 
-  border-radius: var(--radius); 
-  padding: 20px; 
+.hero-image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img{
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  border-radius: var(--radius);
   box-shadow: var(--shadow);
-}
-
-.stat{ 
-  display:flex; 
-  justify-content:space-between; 
-  padding:14px; 
-  border:1px solid var(--border); 
-  border-radius: 14px; 
-  margin-top: 10px; 
-  background: #0b121b; 
-}
-
-.stat strong{ 
-  font-size: 18px; 
+  border: 1px solid var(--border);
 }
 
 /* Trust bar */
