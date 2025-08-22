@@ -23,6 +23,10 @@ html {
   scroll-behavior: smooth;
 }
 
+:target {
+  scroll-margin-top: 50vh; /* push the element down by half the viewport height */
+}
+
 body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
@@ -518,4 +522,55 @@ footer {
     inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.4),
     0 3rem 3rem rgba(0, 0, 0, 0.3),
     0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  display: none; /* hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 200; /* above nav */
+}
+
+.modal-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 600px;
+  max-height: 80vh;
+  width: 90%;
+  padding: 24px;
+  overflow-y: auto;
+  position: relative;
+  animation: fadeInUp 0.3s ease;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.modal-close:hover {
+  color: var(--muted);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
