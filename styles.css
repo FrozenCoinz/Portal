@@ -206,13 +206,13 @@ a{
 }
 
 /* Products */
-.section{ 
-  padding: 80px 0; 
+.section { 
+  padding: 100px 0; /* was 80px */
 }
 
-.section h2{ 
+.section h2 { 
   font-size: 28px; 
-  margin:0 0 32px; 
+  margin: 0 0 40px; /* was 32px */
 }
 
 .cards{ 
@@ -364,11 +364,12 @@ a{
 }
 
 /* Footer */
-footer{ 
-  padding: 60px 0 60px; 
-  border-top:1px solid var(--border); 
-  background: #070b11; 
-  color: #a8b8d6; 
+footer { 
+  padding: 80px 0 80px; /* was 60px top/bottom */
+  margin-top: 40px; /* extra gap above footer */
+  border-top: 1px solid var(--border);
+  background: #070b11;
+  color: #a8b8d6;
 }
 
 .footgrid{ 
@@ -400,6 +401,8 @@ footer{
   .footgrid{ 
     grid-template-columns: 1fr 1fr; 
   }
+  .section { padding: 80px 0; 
+  }
 }
 
 @media (max-width: 620px){
@@ -409,4 +412,111 @@ footer{
   .footgrid{ 
     grid-template-columns: 1fr; 
   }
+  footer { padding: 60px 0; margin-top: 20px; 
+  }
 }
+
+/* Discord CTA button (unique style) */
+.discord-cta {
+  --white: #ffe7ff;
+  --bg: #0f172a; /* adapted to your site’s dark base */
+  --radius: 100px;
+  outline: none;
+  cursor: pointer;
+  border: 0;
+  position: relative;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #0f172a, #1e293b); /* darker site colors */
+  transition: all 0.2s ease;
+  box-shadow:
+    inset 0 0.3rem 0.9rem rgba(255, 255, 255, 0.2),
+    inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.7),
+    inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.4),
+    0 3rem 3rem rgba(0, 0, 0, 0.3),
+    0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
+}
+
+
+.discord-cta .wrap {
+  font-size: 22px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 28px 42px;
+  border-radius: inherit;
+  position: relative;
+  overflow: hidden;
+}
+.discord-cta .wrap p span:nth-child(2) {
+  display: none;
+}
+.discord-cta:hover .wrap p span:nth-child(1) {
+  display: none;
+}
+.discord-cta:hover .wrap p span:nth-child(2) {
+  display: inline-block;
+}
+.discord-cta .wrap p {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  transition: all 0.2s ease;
+  transform: translateY(2%);
+  mask-image: linear-gradient(to bottom, white 40%, transparent);
+}
+.discord-cta .wrap::before,
+.discord-cta .wrap::after {
+  content: "";
+  position: absolute;
+  transition: all 0.3s ease;
+}
+.discord-cta .wrap::before {
+  left: -15%;
+  right: -15%;
+  bottom: 25%;
+  top: -100%;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+.discord-cta .wrap::after {
+  left: 6%;
+  right: 6%;
+  top: 12%;
+  bottom: 40%;
+  border-radius: 22px 22px 0 0;
+  box-shadow: inset 0 10px 8px -10px rgba(255, 255, 255, 0.8);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+.discord-cta:hover {
+  box-shadow:
+    inset 0 0.3rem 0.5rem rgba(255, 255, 255, 0.4),
+    inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.7),
+    inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.7),
+    0 3rem 3rem rgba(0, 0, 0, 0.3),
+    0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
+}
+.discord-cta:hover .wrap::before {
+  transform: translateY(-5%);
+}
+.discord-cta:hover .wrap::after {
+  opacity: 0.4;
+  transform: translateY(5%);
+}
+.discord-cta:hover .wrap p {
+  transform: translateY(-4%);
+}
+.discord-cta:active {
+  transform: translateY(4px);
+  box-shadow:
+    inset 0 0.3rem 0.5rem rgba(255, 255, 255, 0.5),
+    inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.8),
+    inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.4),
+    0 3rem 3rem rgba(0, 0, 0, 0.3),
+    0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
+}
+
