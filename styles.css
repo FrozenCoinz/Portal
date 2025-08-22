@@ -192,7 +192,6 @@ a{
   max-width: 500px;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  border: 1px solid var(--border);
 }
 
 /* Trust bar */
