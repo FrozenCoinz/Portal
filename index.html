@@ -6,6 +6,7 @@
   <title>FrozenCoinz — Hypixel Coins Marketplace</title>
   <meta name="description" content="FrozenCoinz — a trusted Minecraft marketplace for Hypixel Coins. Fast delivery, secure checkout, and 24/7 support." />
   <link rel="stylesheet" href="styles.css">
+  <script src="modal.js"></script>
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="images/favicon.png" type="image/png">
 </head>
@@ -164,26 +165,34 @@
           <h3 style="margin:0">FrozenCoinz</h3>
         </div>
         <p class="legal">© <span id="y">2025</span> FrozenCoinz. All rights reserved.</p>
-        <p class="legal">Contact: support@frozencoinz.example</p>
+        <p class="legal">Contact: <a href="https://discord.gg/Y6N8Z5dfFT">Discord</a></p>
       </div>
       <div>
         <strong>Marketplace</strong>
         <ul style="list-style:none; padding:0; margin:8px 0 0; line-height: 1.9;">
-          <li><a href="#shop">Coin Packages</a></li>
+          <li><a href="#shop">Our Products</a></li>
           <li><a href="#how">How It Works</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
       <div>
         <strong>Legal</strong>
-        <ul style="list-style:none; padding:0; margin:8px 0 0; line-height: 1.9;">
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Refund Policy</a></li>
+        <ul style="list-style:none; padding:0; margin:8px 0 0; line-height:1.9;">
+          <li><a href="#" onclick="openModal('terms', event)">Terms of Service</a></li>
+          <li><a href="#" onclick="openModal('privacy', event)">Privacy Policy</a></li>
+          <li><a href="#" onclick="openModal('refund', event)">Refund Policy</a></li>
         </ul>
       </div>
     </div>
   </footer>
+<!-- Modal -->
+<div id="modal-overlay" class="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal(event)">✕</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
