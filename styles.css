@@ -193,6 +193,8 @@ a{
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   border: none !important;
+  outline: none !important;
+  box-sizing: border-box;
 }
 
 /* Trust bar */
