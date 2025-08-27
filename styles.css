@@ -194,6 +194,9 @@ a{
 .section h2 {
   font-size: 28px;
   margin: 0 0 40px;
+  padding-left: max(20px, 3vw);
+  padding-right: max(20px, 3vw);
+  box-sizing: border-box;
 }
 .cards{
   display:grid;
