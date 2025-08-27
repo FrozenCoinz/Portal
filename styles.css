@@ -492,6 +492,67 @@ footer {
 .modal-close:hover {
   color: var(--muted);
 }
+
+.blobs {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--bg); /* keep your base background */
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.6;
+  mix-blend-mode: screen;
+}
+
+/* Blue accent blob */
+.blob1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--accent), var(--accent-2));
+  top: -150px;
+  left: -150px;
+  animation: float1 18s ease-in-out infinite alternate;
+}
+
+/* Green (success) blob */
+.blob2 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--success), var(--accent));
+  bottom: -200px;
+  right: -150px;
+  animation: float2 22s ease-in-out infinite alternate;
+}
+
+/* Warm (warning/danger) blob */
+.blob3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--warning), var(--danger));
+  top: 40%;
+  left: 60%;
+  animation: float3 25s ease-in-out infinite alternate;
+}
+
+@keyframes float1 {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(60px, 80px); }
+}
+@keyframes float2 {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(-80px, -60px); }
+}
+@keyframes float3 {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(100px, -50px); }
+}
+
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
