@@ -85,16 +85,6 @@ a{
   background: var(--success);
   box-shadow: 0 0 12px var(--success);
 }
-
-.burger-menu {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 28px;
-  color: var(--text);
-  cursor: pointer;
-}
-
 .online-status {
   display: inline-flex;
   align-items: center;
