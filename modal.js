@@ -59,14 +59,32 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.style.display = "none";
   };
 
-  // Burger menu toggle
-  const burger = document.querySelector('.burger-menu');
-  const navActions = document.querySelector('.nav-actions');
-  if (burger && navActions) {
-    burger.addEventListener('click', () => {
-      navActions.classList.toggle('open');
-      const expanded = burger.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
-      burger.setAttribute('aria-expanded', expanded);
-    });
+  const burger = document.querySelector(".burger");
+  const navActions = document.querySelector(".nav-actions");
+
+  function closeMenu() {
+    navActions.classList.remove("open");
+    burger.classList.remove("active");
   }
+
+  // Toggle on burger click
+  burger.addEventListener("click", (e) => {
+    e.stopPropagation(); // prevent closing immediately
+    navActions.classList.toggle("open");
+    burger.classList.toggle("active");
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!navActions.contains(e.target) && !burger.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // Close when clicking a link inside menu
+  navActions.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      closeMenu();
+    });
+  })
 });
