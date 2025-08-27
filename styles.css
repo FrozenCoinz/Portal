@@ -22,6 +22,7 @@
 html{
   scroll-behavior: smooth;
   background-color: var(--bg);
+  overflow-x: hidden;
 }
 :target {
   scroll-margin-top: 50vh;
