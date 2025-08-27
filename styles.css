@@ -25,7 +25,6 @@ html{
 }
 :target {
   scroll-margin-top: 50vh;
-  background-color: var(--bg-alt);
 }
 body{
   margin:0;
@@ -95,12 +94,67 @@ a{
   white-space: nowrap;
 }
 
+.burger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.burger .icon {
+  display: none;
+  transition: opacity 0.25s ease;
+}
+
+.burger .menu-icon { display: block; }
+
+.burger.active .menu-icon { display: none; }
+.burger.active .close-icon { display: block; }
+
+.burger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animate burger to X */
+.burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
 .nav-actions {
-  display: flex;
+  display: flex;              /* normal inline layout */
   align-items: center;
   gap: 10px;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+  position: static;
+  background: none;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  opacity: 1;
+  max-height: none;
+  flex-direction: row;
 }
+
+ .nav-actions.open {
+  max-height: 300px; /* enough space for items */
+  opacity: 1;
+}
+
 .btn{
   padding:10px 14px;
   border:1px solid var(--border);
@@ -520,7 +574,7 @@ footer {
   position: absolute;
   border-radius: 50%;
   filter: blur(140px); /* slightly more blur for bigger blobs */
-  opacity: 0.6;
+  opacity: 0.1;
   mix-blend-mode: screen;
   pointer-events: none;
   will-change: transform;
@@ -631,6 +685,7 @@ footer {
   }
 }
 
+
 /* Tablet and smaller desktops layout changes */
 @media (max-width: 1000px) {
   .grid {
@@ -691,6 +746,7 @@ footer {
   .modal-box {
     margin: 7px;
   }
+  
 }
 
 /* Very small mobile fallback screens */
@@ -714,3 +770,32 @@ footer {
   }
 }
 
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+    .nav-actions {
+    display: flex; /* still flex but collapsible */
+    position: absolute;
+    top: 60px;
+    right: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(15, 22, 33, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+  }
+
+    .nav-actions.open {
+    max-height: 300px; /* show on toggle */
+    opacity: 1;
+  }
+
+}
