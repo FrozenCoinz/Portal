@@ -341,9 +341,12 @@ footer {
   gap: 24px;
 }
 .legal{
-  font-size: 12px;
-  color:#7992b6;
+  padding-left: max(20px, 3vw);
+  padding-right: max(20px, 3vw);
+  box-sizing: border-box;
   margin-top: 10px;
+  font-size: 12px;
+  color: #7992b6;
 }
 
 /* Discord CTA button (unique style) */
