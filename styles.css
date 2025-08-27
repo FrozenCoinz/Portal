@@ -544,16 +544,6 @@ footer {
   .section { padding: 40px 0; }
   footer { padding: 36px 0; margin-top: 20px; }
   .card, .step, .qa, .modal-box { margin: 7px; }
-    .online-status {
-    width: 16px; /* show only the dot */
-    justify-content: center;
-    font-size: 0; /* hide text */
-  }
-  .online-status .dot {
-    width: 12px;
-    height: 12px;
-    box-shadow: 0 0 12px var(--success);
-  }
 }
 
 /* Mobile fallback for really tiny screens */
