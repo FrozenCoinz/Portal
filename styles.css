@@ -86,6 +86,15 @@ a{
   box-shadow: 0 0 12px var(--success);
 }
 
+.burger-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: var(--text);
+  cursor: pointer;
+}
+
 .online-status {
   display: inline-flex;
   align-items: center;
@@ -505,51 +514,98 @@ footer {
 
 /* Responsiveness - Anpassungen für alle Auflösungen */
 @media (max-width: 1350px) {
-  .wrapper, .section, .cards, .grid, .steps, .faq, footer {
+  .wrapper,
+  .section,
+  .cards,
+  .grid,
+  .steps,
+  .faq,
+  footer {
     padding-left: max(12px, 2vw);
     padding-right: max(12px, 2vw);
   }
 }
-@media (max-width: 1000px){
-  .grid{
-    grid-template-columns: 1fr;
+
+/* Tablet and smaller desktops layout changes */
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: 1fr; /* single column grid */
   }
-  .cards{
+  .cards {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-  .steps{
+  .steps {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  .faq{
+  .faq {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  .footgrid{
+  .footgrid {
     grid-template-columns: 1fr 1fr;
   }
-  .section{ padding: min(5vw, 36px) 0; }
-  .card, .step, .qa, .modal-box { margin: 10px; }
+  .section {
+    padding: min(5vw, 36px) 0;
+  }
+  .card,
+  .step,
+  .qa,
+  .modal-box {
+    margin: 10px;
+  }
 }
-@media (max-width: 620px){
-  .cards, .faq, .steps, .wrapper, .section, .grid, footer {
+
+/* Mobile and large smartphone layout */
+@media (max-width: 620px) {
+  .cards,
+  .faq,
+  .steps,
+  .wrapper,
+  .section,
+  .grid,
+  footer {
     padding-left: max(8px, 5vw);
     padding-right: max(8px, 5vw);
     grid-template-columns: 1fr;
   }
-  .footgrid{
+  .footgrid {
     grid-template-columns: 1fr;
   }
-  .section { padding: 40px 0; }
-  footer { padding: 36px 0; margin-top: 20px; }
-  .card, .step, .qa, .modal-box { margin: 7px; }
+  .section {
+    padding: 40px 0;
+  }
+  footer {
+    padding: 36px 0;
+    margin-top: 20px;
+  }
+  .card,
+  .step,
+  .qa,
+  .modal-box {
+    margin: 7px;
+  }
 }
 
-/* Mobile fallback for really tiny screens */
+/* Very small mobile fallback screens */
 @media (max-width: 420px) {
-  .title { font-size: 24px; }
-  .subtitle { font-size: 14px; }
-  .section, footer { padding: 22px 0; }
-  .card, .step, .qa, .modal-box { margin: 4px; padding: 10px; }
+  .title {
+    font-size: 24px;
+  }
+  .subtitle {
+    font-size: 14px;
+  }
+  .section,
+  footer {
+    padding: 22px 0;
+  }
+  .card,
+  .step,
+  .qa,
+  .modal-box {
+    margin: 4px;
+    padding: 10px;
+  }
 }
+
