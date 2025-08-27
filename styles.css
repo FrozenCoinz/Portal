@@ -86,6 +86,14 @@ a{
   box-shadow: 0 0 12px var(--success);
 }
 
+.online-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px; /* spacing between dot and text */
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 .nav-actions{
   display:flex;
   align-items:center;
